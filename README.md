@@ -6,9 +6,14 @@ Essentially, Sanbox is a substitute for Main environment. In Julia by default an
 Sandbox is the place for exploratory analysis and code testing. Once the code features and their implementations are somewhat crystalized the corresponding code is moved to appropriate functional modules following design best practices. These include SOLID, and other principles of simplification, least astonishment, lest privilege, and minimalist implementation.
 
 SOLID principles:
+
     Single Purpose
+
     Open/Close
+
     Liskov Substitution
+
     Interface Demarcation
+
     Dependency Inversion
 
