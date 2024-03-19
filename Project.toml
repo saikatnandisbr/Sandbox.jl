@@ -1,0 +1,13 @@
+name = "Sandbox"
+uuid = "a1e96243-de25-4933-86a4-28be70a62811"
+authors = ["Saikat Nandi"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
