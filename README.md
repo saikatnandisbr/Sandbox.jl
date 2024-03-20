@@ -7,13 +7,13 @@ Sandbox is the place for exploratory analysis and code testing. Once the code fe
 
 SOLID principles:
 
-    Single Purpose
+    Single Responsibility
 
     Open/Close
 
     Liskov Substitution
 
-    Interface Demarcation
+    Interface Segregation
 
     Dependency Inversion
 
