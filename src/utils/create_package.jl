@@ -1,6 +1,9 @@
 # imports
 using PkgTemplates
 
+# exports
+export create_package
+
 # code
 """
     function create_package(pkg_name::String)
