@@ -3,6 +3,10 @@ uuid = "a5ec3546-752f-4bd9-aec1-a70ca1be52e6"
 authors = ["Saikat Nandi"]
 version = "1.0.0-DEV"
 
+[deps]
+BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+PkgTemplates = "14b8a8f1-9102-5b29-a752-f990bacb7fe1"
+
 [compat]
 julia = "1"
 
