@@ -6,7 +6,7 @@ export show_subtype_tree
 
 # code
 """
-    show_subtype_tree(root_type)
+    show_subtype_tree(root_type::Type)
 
 Show subtype tree for given type.
 
@@ -19,7 +19,7 @@ function show_subtype_tree(root_type::Type)
 end
 
 """
-    show_subtype_tree_nested(root_type)
+    show_subtype_tree_nested(root_type::Type, level::Int, indent::Int)
 
 Show subtype tree for given type.
 
