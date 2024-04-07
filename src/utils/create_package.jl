@@ -6,9 +6,13 @@ export create_package
 
 # code
 """
-    function create_package(pkg_name::String)
+    function create_package(pkg_name::String, dir::String)
 
-Create package using PkgTemplates. 
+Create package using PkgTemplates.
+
+pkg_name:   Package name
+dir:        Location where package will be placed, in Windows use forward "/" separator in stead of backward "\"
+
 After creating package using this function follow the steps below to upload the package to github:
 
     1. Create repo on github with name <pkg_anme>.jl
@@ -21,11 +25,12 @@ After creating package using this function follow the steps below to upload the 
         git push -u origin main
 """
 
-function create_package(pkg_name::String)
+function create_package(pkg_name::String, dir::String)
 
     template = Template(;
-        user="saikatnandisbr",
-        authors=["Saikat Nandi"],
+        #user="saikatnandisbr",             # default from git config github.user
+        #authors=["Saikat Nandi"],          # default from git config user.name and user.email
+        dir=dir,
         plugins=[
             License(name="MIT"),
             Git(),
