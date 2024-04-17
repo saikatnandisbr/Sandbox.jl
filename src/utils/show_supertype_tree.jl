@@ -15,17 +15,18 @@ leaf_tye:   Type for which supertype tree is to be displayed
 
 function show_supertype_tree(leaf_type::Type)
 
-    level = 0       # level of tree
-    indent = 4      # spaces used to indent each level of tree
+    level = 1                     # level of tree
 
     println(string(leaf_type))
 
     while leaf_type != Any
 
         leaf_type = supertype(leaf_type)
-        level += 1
 
-        println(join(fill(" ", level * indent)) * string(leaf_type))
+        # use global constant for indentation
+        println(join(fill(" ", level * g_indent_spaces)) * string(leaf_type))
+        
+        level += 1
 
     end
 end

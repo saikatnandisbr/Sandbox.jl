@@ -14,8 +14,13 @@ root_tye:   Type for which subtype tree is to be displayed
 """
 
 function show_subtype_tree(root_type::Type)
+
+    # print root type
+    println(root_type)
+
     # call function to show nested tree
-    show_subtype_tree_nested(root_type, 1, 4)
+    # use global constant for indentation
+    show_subtype_tree_nested(root_type, 1, g_indent_spaces)
 end
 
 """
@@ -29,9 +34,6 @@ indent:     Number of spaces used to indent each level
 """
 
 function show_subtype_tree_nested(root_type::Type, level::Int, indent::Int)
-
-    # print root type without indent
-    if level == 1 println(root_type) end
 
     for sub_type in subtypes(root_type)
         # print each substype with same indent
