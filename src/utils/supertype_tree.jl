@@ -6,14 +6,14 @@ export show_supertype_tree
 
 # code
 """
-    function show_superype_tree(leaf_type::Type)
+    function superype_tree(leaf_type::Type)
 
 Show supertype tree for given type.
 
 leaf_tye:   Type for which supertype tree is to be displayed
 """
 
-function show_supertype_tree(leaf_type::Type)
+function supertype_tree(leaf_type::Type)
 
     level = 1                     # level of tree
 

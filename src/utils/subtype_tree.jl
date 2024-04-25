@@ -6,14 +6,14 @@ export show_subtype_tree
 
 # code
 """
-    function show_subtype_tree(root_type::Type)
+    function subtype_tree(root_type::Type)
 
 Show subtype tree for given type.
 
 root_tye:   Type for which subtype tree is to be displayed
 """
 
-function show_subtype_tree(root_type::Type)
+function subtype_tree(root_type::Type)
 
     # print root type
     println(root_type)
