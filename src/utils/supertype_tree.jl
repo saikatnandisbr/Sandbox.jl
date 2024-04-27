@@ -2,31 +2,35 @@
 using InteractiveUtils   # in base Julia
 
 # exports
-export show_supertype_tree
+export supertype_tree
 
 # code
 """
-    function superype_tree(leaf_type::Type)
+    function supertype_tree(leaf_type::Type; indent=g_indent_spaces)
 
 Show supertype tree for given type.
 
 leaf_tye:   Type for which supertype tree is to be displayed
+indent:     Indent spaces keyword argument supplied with default of global constant
 """
 
-function supertype_tree(leaf_type::Type)
+function supertype_tree(leaf_type::Type; indent=g_indent_spaces)
 
-    level = 1                     # level of tree
+    level = 0                     # level of tree
 
-    println(string(leaf_type))
+    # define closure function that utilizes values of level and indent variables from calling environment
+    # in effect, each time formatter is invoked it returns an anonymous function that uses these two variables
+    formatter = type -> join(fill(" ", level * indent)) * string(type) * "$(isabstracttype(type) ? " (Abstract)" : " (Concrete)")"
+
+    println(formatter(leaf_type))
 
     while leaf_type != Any
 
-        leaf_type = supertype(leaf_type)
-
-        # use global constant for indentation
-        println(join(fill(" ", level * g_indent_spaces)) * string(leaf_type))
-        
         level += 1
 
+        leaf_type = supertype(leaf_type)
+
+        println(formatter(leaf_type))
+        
     end
 end
