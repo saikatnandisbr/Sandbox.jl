@@ -1,11 +1,12 @@
+
 using .ProductReco
 
 # create instance of CollFilteringSVD
-acf = ProductReco.CollFilteringSVD(1)
+acf = ProductReco.PRCollFiltering.CollFilteringSVD(1)
 
 isa(acf, ProductReco.Recommender)
-isa(acf, ProductReco.CollFiltering)
-isa(acf, ProductReco.CollFilteringSVD)
+isa(acf, ProductReco.PRCollFiltering.CollFiltering)
+isa(acf, ProductReco.PRCollFiltering.CollFilteringSVD)
 
 # run fit
 ProductReco.fit(acf)
@@ -16,6 +17,7 @@ prediction[1]
 typeof(prediction)
 
 # run similar_customers
-similar = ProductReco.similar_customers(acf)
+similar = ProductReco.PRCollFiltering.similar_customers(acf)
 similar[1]
 typeof(similar)
+
