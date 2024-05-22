@@ -1,3 +1,5 @@
+# this test script was used in early phases of development to test stubs
+# this script will not run any more that the methdos have evolved during development
 
 using .ProductReco
 
