@@ -70,7 +70,6 @@ end
 length(predict_cust)
 
 # run predict
-
 @time predictions = ProductReco.predict(recommender, predict_cust);         # includes compile time for fist run
 @time predictions = ProductReco.predict(recommender, predict_cust);
 
