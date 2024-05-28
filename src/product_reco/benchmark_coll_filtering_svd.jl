@@ -9,10 +9,13 @@ BLAS.get_num_threads()      # Linear Algebra BLAS threads
 
 # packages needed for testing
 # dev "MY_JULIADEV_FOLDER_PATH/juliadev/ProductReco"
-using ProductReco
 using CSV
 using DataFrames
 using Plots
+
+# track and incude changes
+using Revise
+using ProductReco
 
 # load benchmark data
 folder_name = "./data"
@@ -70,8 +73,8 @@ end
 length(predict_cust)
 
 # run predict
-@time predictions = ProductReco.predict(recommender, predict_cust);         # includes compile time for fist run
-@time predictions = ProductReco.predict(recommender, predict_cust);
+@time predictions = ProductReco.predict(recommender, predict_cust[1:100]);         # includes compile time for fist run
+@time predictions = ProductReco.predict(recommender, predict_cust)[1:100];
 
 # predictions
 length(predictions)
