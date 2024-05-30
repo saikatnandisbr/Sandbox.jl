@@ -73,8 +73,8 @@ end
 length(predict_cust)
 
 # run predict
-@time predictions = ProductReco.predict(recommender, predict_cust[1:100]);         # includes compile time for fist run
-@time predictions = ProductReco.predict(recommender, predict_cust)[1:100];
+@time predictions = ProductReco.predict(recommender, predict_cust);         # includes compile time for fist run
+@time predictions = ProductReco.predict(recommender, predict_cust);
 
 # predictions
 length(predictions)
